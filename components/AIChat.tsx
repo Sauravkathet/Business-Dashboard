@@ -123,10 +123,10 @@ export const AIChat: React.FC = () => {
       </div>
 
       <div className="p-4 bg-white border-t border-slate-200">
-         {process.env.API_KEY ? null : (
+         {import.meta.env.VITE_GEMINI_API_KEY ? null : (
             <div className="mb-4 p-3 bg-amber-50 text-amber-800 text-xs rounded-lg flex items-center gap-2">
               <AlertCircle className="w-4 h-4"/>
-              <span>Warning: No API Key detected. AI features will respond with mock errors.</span>
+              <span>Warning: No API Key detected. AI features are disabled.</span>
             </div>
          )}
          <form onSubmit={handleSend} className="flex gap-4">
